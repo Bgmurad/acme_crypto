@@ -1,0 +1,22 @@
+version: '2'
+services:
+  web1:
+    image: debian
+    stdin_open: true
+    tty: true
+    volumes:
+       - ./data/www1:/var/www/html
+  web2:
+    image: debian
+    stdin_open: true
+    tty: true
+    volumes:
+        - ./data/www2:/var/www/html
+  ng:
+    image: debian
+    stdin_open: true
+    tty: true
+    ports:
+    - "8080:80"
+    volumes:
+       - ./data/ng/:/var/tmp/data/
